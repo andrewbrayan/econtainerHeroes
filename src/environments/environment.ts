@@ -3,8 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  cdnApi: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api'
+  production: false
 };
 
 /*

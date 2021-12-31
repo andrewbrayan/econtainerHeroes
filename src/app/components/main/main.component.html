@@ -1,36 +1,45 @@
-<div class="container-fluid bg-general" style="height: 100vh;">
-    <nav class="navbar navbar-light bg-light shadow mb-5">
-      <div class="container-fluid">
-        <a class="navbar-brand ml-4" href="#">
-          <img src="https://www.econtainers.co/assets/img/logos/logo-econtainers-contenedores-maritimos-img-02.png" alt="" width="170" height="" class="d-inline-block align-text-top">
-        </a>
+<div class="container-fluid bg-general">
+  <app-header></app-header>
+  <div class="container">
+    <div class="row mb-4 d-flex justify-content-center">
+      <div class="col-xl-7 col-md-6 col-sm">
+        <form action="">
+          <input
+            #inputSearch
+            autofocus
+            class="form-control form-control-lg"
+            type="text"
+            placeholder="Search your SuperHero"
+            (keyup)="Search(inputSearch.value)"
+          />
+        </form>
       </div>
-    </nav>
-  
-    <div class="container">
-      <div class="row mb-2 d-flex justify-content-center">
-        <div class="col-xl-7 col-md-6 col-sm">
-          <form action="">
-            <input class="form-control form-control-lg" type="text" placeholder="Search your SuperHero" aria-label=".form-control-lg example">
-          </form>
-        </div>
-      </div>
-      <div class="row d-flex justify-content-evenly">
-        <div class="col mb-3 mt-3 d-flex justify-content-center">
-          <div class="card p-4 bg-card shadow" style="width: 18rem;">
-            <img src="https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/1-a-bomb.jpg" class="card-img-top" alt="...">
-            <div class="card-body text-white">
-              <h3 class="text-center fw-bold">Hero Name</h3>
-              <p class="card-text m-0">race: Human</p>
-              <p class="card-text m-0">strength: 100</p>
-              <p class="card-text m-0">intelligence: 38</p>
-              <p class="card-text m-0">speed: 17</p>
-              <p class="card-text m-0">power: 24</p>
-            </div>
+    </div>
+    <div class="row d-flex justify-content-evenly">
+      <div
+        class="col mb-3 mt-3 d-flex justify-content-center"
+        *ngFor="let hero of randomHeroes"
+      >
+        <div
+          [routerLink]="['/hero', hero.id]"
+          class="card p-4 bg-card shadow card-styles"
+        >
+          <img [src]="hero.images.sm" class="card-img-top" [alt]="hero.name" />
+          <div class="card-body text-white">
+            <h3 class="text-center fw-bold">{{ hero.name }}</h3>
+            <p class="card-text m-0">Race: {{ hero.appearance.race }}</p>
+            <p class="card-text m-0">
+              Strength: {{ hero.powerstats.strength }}
+            </p>
+            <p class="card-text m-0">
+              Intelligence: {{ hero.powerstats.intelligence }}
+            </p>
+            <p class="card-text m-0">Speed: {{ hero.powerstats.speed }}</p>
+            <p class="card-text m-0">Power: {{ hero.powerstats.power }}</p>
+            <p class="card-text text-end m-0">{{ hero.id }}</p>
           </div>
         </div>
-        
       </div>
     </div>
   </div>
-  
+</div>

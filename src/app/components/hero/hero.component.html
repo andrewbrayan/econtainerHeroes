@@ -1,0 +1,118 @@
+<div class="container-fluid bg-general" style="height: 100vh">
+  <app-header></app-header>
+  <div class="container">
+    <div class="row">
+      <div
+        class="col d-flex justify-content-center card-styles"
+        style="margin: auto 0 auto 0;"
+      >
+        <div class="card p-4 bg-card shadow effect-card" style="width: 25rem">
+          <img
+            [src]="heroData.images.lg"
+            class="card-img-top"
+            [alt]="heroData.name"
+          />
+        </div>
+      </div>
+      <div class="col">
+        <div class="card text-center shadow">
+          <div class="card-header">
+            <h2 class="fw-bold">{{ heroData.name }}</h2>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col text-start">
+                <h5 class="card-title text-danger">Power Stats</h5>
+                <p class="card-text">
+                  <strong>Intelligence:</strong>
+                  {{ heroData.powerstats.intelligence }}
+                </p>
+                <p class="card-text">
+                  <strong>Strength:</strong> {{ heroData.powerstats.strength }}
+                </p>
+                <p class="card-text">
+                  <strong>Speed:</strong> {{ heroData.powerstats.speed }}
+                </p>
+                <p class="card-text">
+                  <strong>Durability:</strong>
+                  {{ heroData.powerstats.durability }}
+                </p>
+                <p class="card-text">
+                  <strong>Power:</strong> {{ heroData.powerstats.power }}
+                </p>
+                <p class="card-text">
+                  <strong>Combat:</strong> {{ heroData.powerstats.combat }}
+                </p>
+              </div>
+              <div class="col text-start">
+                <h5 class="card-title text-danger">Appearance</h5>
+                <p class="card-text">
+                  <strong>Gender:</strong> {{ heroData.appearance.Gender }}
+                </p>
+                <p class="card-text">
+                  <strong>Race:</strong> {{ heroData.appearance.race }}
+                </p>
+                <p class="card-text">
+                  <strong>Height:</strong> {{ heroData.appearance.height[1] }}
+                </p>
+                <p class="card-text">
+                  <strong>Weight:</strong> {{ heroData.appearance.weight[1] }}
+                </p>
+                <p class="card-text">
+                  <strong>Eye Color</strong>: {{ heroData.appearance.eyeColor }}
+                </p>
+                <p class="card-text">
+                  <strong>Hair Color</strong>:
+                  {{ heroData.appearance.hairColor }}
+                </p>
+              </div>
+            </div>
+            <div class="bg-primary mt-3 mb-3" style="height: 3px"></div>
+            <div class="row">
+              <div class="col text-start">
+                <h5 class="card-title text-danger">Biography</h5>
+                <p class="card-text">
+                  <strong>Full Name:</strong> {{ heroData.biography.fullName }}
+                </p>
+                <p class="card-text">
+                  <strong>Alter Egos:</strong>
+                  {{ heroData.biography.alterEgos }}
+                </p>
+                <p class="card-text">
+                  <strong>Aliases:</strong> {{ heroData.biography.aliases[0] }}
+                </p>
+                <p class="card-text">
+                  <strong>Place Of Birth:</strong>
+                  {{ heroData.biography.placeOfBirth }}
+                </p>
+                <p class="card-text">
+                  <strong>Publisher:</strong> {{ heroData.biography.publisher }}
+                </p>
+                <p class="card-text">
+                  <strong>Alignment:</strong> {{ heroData.biography.alignment }}
+                </p>
+              </div>
+              <div class="col text-start">
+                <h5 class="card-title text-danger">Work</h5>
+                <p class="card-text">
+                  <strong>Occupation:</strong> {{ heroData.work.occupation }}
+                </p>
+                <p class="card-text">
+                  <strong>Base:</strong> {{ heroData.work.base }}
+                </p>
+                <h5 class="card-title text-danger">Connections</h5>
+                <p class="card-text">
+                  <strong>Group Affiliation:</strong>
+                  {{ heroData.connections.groupAffiliation }}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-muted">
+            <a [routerLink]="['/home']" class="btn btn-primary">Go Back</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

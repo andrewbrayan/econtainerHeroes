@@ -5,17 +5,21 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { MainComponent } from './components/main/main.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HeroComponent } from './components/hero/hero.component';
+import { HeaderComponent } from './components/header/header.component';
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    MainComponent,
-    routingComponents
-  ],
+  declarations: [AppComponent, MainComponent, HeroComponent, routingComponents, HeaderComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
