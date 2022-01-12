@@ -24,7 +24,7 @@
     <div class="row d-flex justify-content-evenly" *ngIf="items">
       <div
         class="col mb-3 mt-3 d-flex justify-content-center"
-        *ngFor="let hero of allHeroes"
+        *ngFor="let hero of renderHeroes"
       >
         <div
           [routerLink]="['/hero', hero.id]"

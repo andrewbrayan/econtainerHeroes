@@ -10,7 +10,7 @@ import { ApiService } from '../../services/api/api.service';
 })
 export class MainComponent implements OnInit {
   allHeroes: any[] = [];
-  randomHeroes: any[] = [];
+  renderHeroes: any[] = [];
   list: number[] = [];
   items: boolean = false;
   load: boolean = true;
@@ -23,9 +23,7 @@ export class MainComponent implements OnInit {
       .pipe()
       .subscribe((data: any) => {
         this.allHeroes = [...data];
-
         this.random()
-
         this.items = true;
         this.load = false;
       });
@@ -36,6 +34,7 @@ export class MainComponent implements OnInit {
       let randomNumber = Math.floor(Math.random() * this.allHeroes.length);
       if (this.check(randomNumber) == false) {
         this.list.push(randomNumber);
+        this.renderHeroes.push(this.allHeroes[randomNumber])
         i ++
       } 
     }
@@ -53,22 +52,21 @@ export class MainComponent implements OnInit {
 
   Search(value: string) {
     if (value.length > 3) {
-      this.randomHeroes = [];
+      this.renderHeroes = [];
       for (let i = 0; i < this.allHeroes.length; i++) {
         if (
           this.allHeroes[i].name.toLowerCase().indexOf(value.toLowerCase()) !=
           -1
         ) {
-          this.randomHeroes.push(this.allHeroes[i]);
+          this.renderHeroes.push(this.allHeroes[i]);
         }
       }
-    } else {
-      this.init();
+    } else if (value.length == 0) {
+      this.random();
     }
   }
 
   ngOnInit(): void {
-    this.init();
-    
+    this.init();   
   }
 }
