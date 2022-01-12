@@ -6,9 +6,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./search.component.css'],
 })
 export class SearchComponent implements OnInit {
-  @Input() searchIntput: string = '';
-  
-  constructor() {  }
+  @Input() searchinput: any;
+
+  constructor() {}  
 
   ngOnInit(): void {
   }

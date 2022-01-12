@@ -10,9 +10,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HeroComponent } from './components/hero/hero.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SearchComponent } from './components/search/search.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, MainComponent, HeroComponent, routingComponents, HeaderComponent, SearchComponent],
+  declarations: [AppComponent, MainComponent, HeroComponent, routingComponents, HeaderComponent, SearchComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
