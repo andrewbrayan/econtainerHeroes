@@ -9,9 +9,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HeroComponent } from './components/hero/hero.component';
 import { HeaderComponent } from './components/header/header.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
-  declarations: [AppComponent, MainComponent, HeroComponent, routingComponents, HeaderComponent],
+  declarations: [AppComponent, MainComponent, HeroComponent, routingComponents, HeaderComponent, SearchComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

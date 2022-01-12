@@ -12,29 +12,43 @@ export class MainComponent implements OnInit {
   allHeroes: any[] = [];
   randomHeroes: any[] = [];
   list: number[] = [];
+  items: boolean = false;
+  load: boolean = true;
 
   constructor(private api: ApiService, private router: Router) {}
 
   init() {
-    for (let i = 0; i < 20; i++) {
-      let x = Math.floor(Math.random() * 563);
-      if (this.list[i] == x) {
-        x = Math.floor(Math.random() * 563);
-      } else {
-        this.list[i] = x;
-      }
-    }
-
     this.api
       .getAllHeroes()
       .pipe()
       .subscribe((data: any) => {
         this.allHeroes = [...data];
 
-        for (let i = 0; i < this.list.length; i++) {
-          this.randomHeroes[i] = this.allHeroes[this.list[i]];
-        }
+        this.random()
+
+        this.items = true;
+        this.load = false;
       });
+  }
+
+  random() {
+    for (let i = 0; i < 20;) {
+      let randomNumber = Math.floor(Math.random() * this.allHeroes.length);
+      if (this.check(randomNumber) == false) {
+        this.list.push(randomNumber);
+        i ++
+      } 
+    }
+  }
+
+  check(Num: number) {
+    let rept = false;
+    for (let x = 0; x < this.list.length; x++) {
+      if (this.list[x] == Num) {
+        rept = true;
+      }
+    }
+    return rept;
   }
 
   Search(value: string) {
@@ -55,5 +69,6 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
     this.init();
+    
   }
 }

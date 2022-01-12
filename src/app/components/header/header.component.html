@@ -1,13 +1,29 @@
-<nav class="navbar navbar-light bg-light shadow mb-5">
-    <div class="container-fluid">
-      <a class="navbar-brand fs-1 fw-bold text-primary ml-4" [routerLink]="['/home']">
-        <img
-          src="assets/brand.png"
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow mb-5">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/home']">
+      <img
+          src="assets/brand.svg"
           alt=""
-          width="110"
-          height=""
+          width=""
+          height="65"
           class="d-inline-block align-text-top"
         />
-      </a>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end " id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" style="margin: 0 50px 0 50px;">Item 1</a>
+        </li>
+        <li class="nav-item" style="margin: 0 50px 0 50px;">
+          <a class="nav-link active">Item 2</a>
+        </li>
+        <li class="nav-item" style="margin: 0 50px 0 50px;">
+          <a class="nav-link active">Item 3</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
